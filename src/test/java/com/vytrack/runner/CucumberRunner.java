@@ -10,9 +10,15 @@ import org.junit.runner.RunWith;
         features = "C:\\Users\\Admin\\IdeaProjects\\Fall2019OnlineCucumberSelenium\\src\\test\\resources\\features",
         dryRun = false,
         strict = false,
-        tags =" @driver"
+        tags = "@create_calendar_event_2",
+        plugin = {
+                "html:target/default-report",
+                // this line will generate jason report
+                "json:target/cucumber.json"
+        }
 )
 public class CucumberRunner {
 
 
 }
+

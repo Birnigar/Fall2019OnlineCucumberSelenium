@@ -50,18 +50,21 @@ public class CalenderEventsPage extends AbstractPageBase {
     public void enterCalendarEventTitle(String titleValue) {
         BrowserUtils.waitForPageToLoad(20);
         wait.until(ExpectedConditions.visibilityOf(title)).sendKeys(titleValue);
+      wait.until(ExpectedConditions.attributeToBe(title,"value",titleValue));
     }
 
     public void enterCalendarEventDescription(String description) {
         //wait until frame is available and switch to it
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(descriptionFrame));
         descriptionTextArea.sendKeys(description);
+        wait.until(ExpectedConditions.textToBePresentInElement(descriptionTextArea,description));
         driver.switchTo().defaultContent();//exit from the frame
-        BrowserUtils.wait(6);
+
     }
 
     public void clickOnSaveAndClose() {
         wait.until(ExpectedConditions.elementToBeClickable(saveAndClose)).click();
+
     }
 
     public String getGeneralInfoTitleText() {
