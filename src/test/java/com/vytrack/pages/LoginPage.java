@@ -21,12 +21,7 @@ public class LoginPage extends AbstractPageBase {
     @FindBy(css = "[class='alert alert-error']")
     private WebElement warningMessage;
 
-    public LoginPage(){
-        //to connect our webdriver, page class and page factory
-        //PageFactory - used to use @FindBy annotations
-        //PageFactory - helps to find elements easier
-    PageFactory.initElements(Driver.getDriver(),this);
-}
+
     public void login(String usernameValue,String passwordValue)  {
         username.sendKeys(usernameValue);
         password.sendKeys(passwordValue, Keys.ENTER);
