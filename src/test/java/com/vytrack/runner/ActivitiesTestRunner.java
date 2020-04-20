@@ -8,13 +8,13 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         glue = "com\\vytrack\\step_definitions",
         features = "src\\test\\resources\\features\\activities",
-        dryRun = true,
+        dryRun = false,
         strict = false,
-        tags = "@view_calender_event",
+        tags = "@view_calender_events",
         plugin = {
                 "html:target/default-report",
                 // this line will generate jason report
-                "json:target/cucumber.json"
+                "json:target/cucumber2.json"
         }
 )
 public class ActivitiesTestRunner {

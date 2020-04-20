@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         plugin = {
                 "html:target/default-report",
                 // this line will generate jason report
-                "json:target/cucumber.json"
+                "json:target/cucumber1.json"
         }
 )
 public class CucumberRunner {

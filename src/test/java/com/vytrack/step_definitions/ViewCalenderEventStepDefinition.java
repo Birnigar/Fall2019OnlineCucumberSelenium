@@ -1,22 +1,18 @@
 package com.vytrack.step_definitions;
 
+import com.vytrack.pages.activities.CalenderEventsPage;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 
 import java.util.List;
-import java.util.Map;
 
 public class ViewCalenderEventStepDefinition {
+    CalenderEventsPage calenderEventsPage=new CalenderEventsPage();
 
     @Then("View Per Page menu should have following options")
-    public void view_Per_Page_menu_should_have_following_options(List<Map<String,String>> dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-        throw new io.cucumber.java.PendingException();
+    public void view_Per_Page_menu_should_have_following_options(List<String> dataTable) {
+        System.out.println("Expected values: "+dataTable);
+        Assert.assertEquals(dataTable,calenderEventsPage.getViewPageOptions());
     }
 
 
