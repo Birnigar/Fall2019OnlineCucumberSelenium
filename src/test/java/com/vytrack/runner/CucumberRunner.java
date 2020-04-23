@@ -7,10 +7,10 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         glue = "com\\vytrack\\step_definitions",
-        features = "C:\\Users\\Admin\\IdeaProjects\\Fall2019OnlineCucumberSelenium\\src\\test\\resources\\features",
+        features = "src\\test\\resources\\features",
         dryRun = false,
         strict = false,
-        tags = "@create_car",
+        tags = "@scenario_outline_2",
         plugin = {
                 "html:target/default-report",
                 // this line will generate jason report

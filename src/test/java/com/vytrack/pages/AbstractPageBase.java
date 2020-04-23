@@ -27,6 +27,7 @@ public abstract class AbstractPageBase {
     public void clickOnSaveAndClose() {
         BrowserUtils.wait(10);
         wait.until(ExpectedConditions.elementToBeClickable(saveAndClose)).click();
+        BrowserUtils.wait(10);
     }
 
     public String getCurrentUserName(){
@@ -63,5 +64,11 @@ public abstract class AbstractPageBase {
 
 
         BrowserUtils.wait(10);
+        waitForLoaderMask();
+
+    }
+
+    public void waitForLoaderMask(){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("[class*='loader-mask']")));
     }
 }
