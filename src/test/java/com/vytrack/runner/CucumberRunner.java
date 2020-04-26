@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src\\test\\resources\\features",
         dryRun = false,
         strict = false,
-        tags = "@scenario_outline_2",
+  //      tags = "",
         plugin = {
                 "html:target/default-report",
                 // this line will generate jason report
