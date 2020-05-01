@@ -11,10 +11,17 @@ import org.junit.Assert;
 
 public class LoginStepDefinitions {
     LoginPage loginPage=new LoginPage();
+
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
         System.out.println("Open login page");
-        String URL= ConfigurationReader.getProperty("qa3");
+        //-Denv=qa1, -denv=qa2, -Denv=ga3
+        String env="qa2";
+        if(System.getProperty("env")!=null){
+            env=System.getProperty("env");
+        }
+        String URL= ConfigurationReader.getProperty(env);
+        System.out.println("URL :: "+URL);
         Driver.getDriver().get(URL);
 
     }
@@ -27,7 +34,8 @@ public class LoginStepDefinitions {
     }
     @When("user logs in as a store manager")
     public void user_logs_in_as_a_store_manager() {
-       loginPage.login("storemanager85","UserUser123");
+
+        loginPage.login("storemanager85","UserUser123");
     }
 
 
