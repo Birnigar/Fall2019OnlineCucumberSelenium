@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src\\test\\resources\\features",
         dryRun = false,
         strict = false,
-        tags = "@view_calender_events",
+        tags = "@sales_manager",
         plugin = {
                 "html:target/default-report",
                 // this line will generate jason report
